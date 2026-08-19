@@ -1,0 +1,65 @@
+{
+  "site_ho_ghana": {
+    "lat": 6.601,
+    "annual_ghi_kwh_m2_day": 4.91
+  },
+  "site_meru_kenya": {
+    "lat": 0.05,
+    "annual_ghi_kwh_m2_day": 6.2
+  },
+  "unchanged_hardware_at_ho_worst_margin_wh": -442,
+  "min_array_w_ho_13c": 350.0,
+  "recommended_array_w": 450.0,
+  "recommended_setpoint_c": 13.0,
+  "sensitivity": [
+    {
+      "assumption": "envelope UA (W/K)",
+      "low_margin_wh": -322,
+      "high_margin_wh": -683,
+      "flips": false
+    },
+    {
+      "assumption": "door openings / day",
+      "low_margin_wh": -401,
+      "high_margin_wh": -497,
+      "flips": false
+    },
+    {
+      "assumption": "crates loaded / day",
+      "low_margin_wh": -23,
+      "high_margin_wh": -1002,
+      "flips": false
+    },
+    {
+      "assumption": "soiling eff (Harmattan)",
+      "low_margin_wh": -547,
+      "high_margin_wh": -377,
+      "flips": false
+    },
+    {
+      "assumption": "PV temp coeff (/K)",
+      "low_margin_wh": -468,
+      "high_margin_wh": -414,
+      "flips": false
+    },
+    {
+      "assumption": "condenser approach (K)",
+      "low_margin_wh": -307,
+      "high_margin_wh": -578,
+      "flips": false
+    },
+    {
+      "assumption": "battery round-trip eff",
+      "low_margin_wh": -504,
+      "high_margin_wh": -405,
+      "flips": false
+    },
+    {
+      "assumption": "field-heat entry offset (K)",
+      "low_margin_wh": -349,
+      "high_margin_wh": -536,
+      "flips": false
+    }
+  ],
+  "flips_of_conclusion": 0
+}

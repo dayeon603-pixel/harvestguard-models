@@ -1,0 +1,82 @@
+{
+  "site": "Ho, Volta Region, Ghana",
+  "weather": "NASA POWER hourly, 2024, 8784 h",
+  "timestep_min": 5.0,
+  "cases": [
+    {
+      "label": "Kenya spec ported (330 W, 8 C)",
+      "array_w": 330.0,
+      "battery_kwh": 4.8,
+      "setpoint_c": 8.0,
+      "verdict": "FAILS",
+      "hours_in_band_pct": 59.74,
+      "hours_above_ceiling": 1167,
+      "longest_excursion_h": 171,
+      "brownout_h": 3383,
+      "min_soc_pct": 0.0,
+      "peak_box_c": 24.03,
+      "compressor_duty_pct": 55.9,
+      "pv_kwh_year": 472.1
+    },
+    {
+      "label": "Kenya array, Ghana setpoint",
+      "array_w": 330.0,
+      "battery_kwh": 4.8,
+      "setpoint_c": 13.0,
+      "verdict": "HOLDS",
+      "hours_in_band_pct": 98.91,
+      "hours_above_ceiling": 96,
+      "longest_excursion_h": 3,
+      "brownout_h": 0,
+      "min_soc_pct": 30.0,
+      "peak_box_c": 16.17,
+      "compressor_duty_pct": 51.9,
+      "pv_kwh_year": 472.1
+    },
+    {
+      "label": "Ghana spec (450 W, 13 C)",
+      "array_w": 450.0,
+      "battery_kwh": 4.8,
+      "setpoint_c": 13.0,
+      "verdict": "HOLDS",
+      "hours_in_band_pct": 98.91,
+      "hours_above_ceiling": 96,
+      "longest_excursion_h": 3,
+      "brownout_h": 0,
+      "min_soc_pct": 76.0,
+      "peak_box_c": 16.17,
+      "compressor_duty_pct": 51.9,
+      "pv_kwh_year": 643.8
+    },
+    {
+      "label": "Ghana spec, heavy duty 40 doors",
+      "array_w": 450.0,
+      "battery_kwh": 4.8,
+      "setpoint_c": 13.0,
+      "verdict": "HOLDS",
+      "hours_in_band_pct": 98.6,
+      "hours_above_ceiling": 123,
+      "longest_excursion_h": 3,
+      "brownout_h": 0,
+      "min_soc_pct": 75.0,
+      "peak_box_c": 16.32,
+      "compressor_duty_pct": 53.0,
+      "pv_kwh_year": 643.8
+    },
+    {
+      "label": "HG-C production SKU (440 W)",
+      "array_w": 440.0,
+      "battery_kwh": 4.8,
+      "setpoint_c": 13.0,
+      "verdict": "HOLDS",
+      "hours_in_band_pct": 98.91,
+      "hours_above_ceiling": 96,
+      "longest_excursion_h": 3,
+      "brownout_h": 0,
+      "min_soc_pct": 75.6,
+      "peak_box_c": 16.17,
+      "compressor_duty_pct": 51.9,
+      "pv_kwh_year": 629.5
+    }
+  ]
+}

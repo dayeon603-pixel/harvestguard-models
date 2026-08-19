@@ -1,0 +1,98 @@
+{
+  "grid": {
+    "nx": 25,
+    "ny": 17,
+    "nz": 21,
+    "cells": 8925,
+    "dx_mm": 49.6,
+    "solver": "backward Euler, sparse LU"
+  },
+  "crates": 36,
+  "ambient_c": 28.8,
+  "steady_state": {
+    "setpoint_c": 13.0,
+    "air_c": 11.75,
+    "coldest_crate_c": 10.85,
+    "warmest_crate_c": 13.32,
+    "spread_k": 2.47,
+    "chilling_margin_k": 0.85,
+    "crate_mean_c": [
+      13.32,
+      12.92,
+      12.43,
+      11.74,
+      13.31,
+      12.86,
+      12.32,
+      11.5,
+      13.32,
+      12.92,
+      12.43,
+      11.74,
+      13.23,
+      12.8,
+      12.21,
+      11.27,
+      13.2,
+      12.71,
+      12.05,
+      10.85,
+      13.23,
+      12.8,
+      12.21,
+      11.27,
+      13.32,
+      12.92,
+      12.43,
+      11.74,
+      13.31,
+      12.86,
+      12.32,
+      11.5,
+      13.32,
+      12.92,
+      12.43,
+      11.74
+    ]
+  },
+  "setpoint_floor": [
+    {
+      "setpoint_c": 13.0,
+      "coldest_c": 10.85,
+      "spread_k": 2.47,
+      "crates_injured": 0
+    },
+    {
+      "setpoint_c": 12.0,
+      "coldest_c": 9.8,
+      "spread_k": 2.55,
+      "crates_injured": 1
+    },
+    {
+      "setpoint_c": 11.0,
+      "coldest_c": 8.74,
+      "spread_k": 2.62,
+      "crates_injured": 10
+    },
+    {
+      "setpoint_c": 10.0,
+      "coldest_c": 7.69,
+      "spread_k": 2.69,
+      "crates_injured": 27
+    }
+  ],
+  "hot_load": {
+    "crates": 6,
+    "entry_c": 32.0,
+    "reach_band_h": [
+      8.5,
+      7.5,
+      8.5,
+      8.5,
+      7.0,
+      8.5
+    ],
+    "peak_neighbours_disturbed": 6,
+    "all_recovered": true
+  }
+}

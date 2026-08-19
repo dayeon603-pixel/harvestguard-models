@@ -1,0 +1,120 @@
+{
+  "hours": 14.0,
+  "hot_entry_c": 32.0,
+  "crates_total": 36,
+  "forced_air_k_multiplier": 6.0,
+  "hot_capacity_room_cooling": 0,
+  "hot_capacity_forced_air": 0,
+  "cases": [
+    {
+      "n_hot": 2,
+      "forced_air": false,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 19.037180272017572,
+      "spread_k": 6.914963943217417,
+      "cold_spoiled": 4,
+      "usable": 30,
+      "chilled": 0
+    },
+    {
+      "n_hot": 4,
+      "forced_air": false,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 20.71319427172083,
+      "spread_k": 8.240293786264509,
+      "cold_spoiled": 9,
+      "usable": 23,
+      "chilled": 0
+    },
+    {
+      "n_hot": 6,
+      "forced_air": false,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 21.015059150070638,
+      "spread_k": 7.278208467419661,
+      "cold_spoiled": 12,
+      "usable": 18,
+      "chilled": 0
+    },
+    {
+      "n_hot": 9,
+      "forced_air": false,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 21.460110368077636,
+      "spread_k": 7.376755478844061,
+      "cold_spoiled": 17,
+      "usable": 10,
+      "chilled": 0
+    },
+    {
+      "n_hot": 12,
+      "forced_air": false,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 24.52000422647455,
+      "spread_k": 10.233334046707647,
+      "cold_spoiled": 18,
+      "usable": 6,
+      "chilled": 0
+    },
+    {
+      "n_hot": 2,
+      "forced_air": true,
+      "hot_in_band": 2,
+      "slowest_h": 12.997211851105217,
+      "warmest_c": 15.395710529680665,
+      "spread_k": 3.111306712521003,
+      "cold_spoiled": 3,
+      "usable": 33,
+      "chilled": 0
+    },
+    {
+      "n_hot": 4,
+      "forced_air": true,
+      "hot_in_band": 2,
+      "slowest_h": 12.8305809299372,
+      "warmest_c": 16.363263547872183,
+      "spread_k": 3.3083993266591847,
+      "cold_spoiled": 17,
+      "usable": 17,
+      "chilled": 0
+    },
+    {
+      "n_hot": 6,
+      "forced_air": true,
+      "hot_in_band": 2,
+      "slowest_h": 13.99699737811331,
+      "warmest_c": 16.807644356296564,
+      "spread_k": 3.016331975631859,
+      "cold_spoiled": 29,
+      "usable": 3,
+      "chilled": 0
+    },
+    {
+      "n_hot": 9,
+      "forced_air": true,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 17.85472073527929,
+      "spread_k": 2.7075418401327394,
+      "cold_spoiled": 27,
+      "usable": 0,
+      "chilled": 0
+    },
+    {
+      "n_hot": 12,
+      "forced_air": true,
+      "hot_in_band": 0,
+      "slowest_h": NaN,
+      "warmest_c": 19.67292730882676,
+      "spread_k": 3.438132773284373,
+      "cold_spoiled": 24,
+      "usable": 0,
+      "chilled": 0
+    }
+  ]
+}

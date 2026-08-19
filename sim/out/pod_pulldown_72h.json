@@ -1,0 +1,16 @@
+{
+  "reach_h": [
+    null,
+    25.5,
+    null,
+    32.0,
+    14.0,
+    32.0
+  ],
+  "final_warmest_c": 20.46,
+  "final_coldest_c": 11.5,
+  "final_spread_k": 8.96,
+  "air_mean_c": 17.19,
+  "usable": 5,
+  "chilled": 0
+}
