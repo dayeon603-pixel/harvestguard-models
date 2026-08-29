@@ -72,21 +72,33 @@ been validated against repayment outcomes, because no loans have been written ag
 
 ## Running it
 
-All paths are relative to the repo root, so `cd` into the clone first.
-
 ```bash
+git clone https://github.com/dayeon603-pixel/harvestguard-models.git
+cd harvestguard-models
 pip install -r requirements.txt
 
-python3 sim/ghana_energy_model.py        # steady-state balance
-python3 sim/ho_dynamic_sim.py            # 8,784-hour dynamic run
-python3 sim/pod_thermal_3d.py            # 3D interior model
-python3 sim/africa_sizing_engine.py      # 33 regions, SKU partition
+python3 sim/ghana_energy_model.py
+python3 sim/ho_dynamic_sim.py
+python3 sim/pod_thermal_3d.py
+python3 sim/africa_sizing_engine.py
 
 cd services/ledger
-python3 -m pytest -q                     # 28 tests
-PYTHONPATH=src python3 demo_season.py    # six months end to end
-cd ../..
+python3 -m pytest -q
+PYTHONPATH=src python3 demo_season.py
 ```
+
+| Command | What it prints |
+|---|---|
+| `ghana_energy_model.py` | Steady-state monthly balance, and the minimum array that closes every month |
+| `ho_dynamic_sim.py` | 8,784-hour run on real Ho weather: in-band %, brownout hours, worst week |
+| `pod_thermal_3d.py` | Interior field, stratification spread, crates below the assumed floor |
+| `africa_sizing_engine.py` | 33 regions sized, then partitioned into three SKUs |
+| `pytest -q` | 28 tests over the ledger |
+| `demo_season.py` | Six months end to end, ending in the tamper test |
+
+The commands carry no inline comments on purpose, so the block survives a paste into shells
+that do not treat `#` as a comment interactively. Every path is relative to the repo root, and
+the last two commands run from `services/ledger`.
 
 The demo runs a season of traffic through the live API, then tampers with a historical record to
 show the chain detecting it and the service refusing to issue credit against unverified history.
