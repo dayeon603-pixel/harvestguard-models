@@ -35,10 +35,20 @@ highland baseline to Ho, Volta Region, the design runs an energy deficit in all 
 worst case −442 Wh/day. Ho has 21% less solar resource against a 9.1 K hotter mean, so supply
 falls and demand rises together. Eight assumptions swung independently; **0 of 8 flip it.**
 
-**Stratification sets the setpoint, not the average.** The 3D interior model finds a 2.47 K spread
-from the evaporator to the floor. At a 13 °C setpoint the coldest crate sits 0.85 K above the
-chilling-injury floor; at 11 °C, **10 of 36 crates would be damaged while the thermostat still
-reads acceptable.** A lumped model sees only the average and would permit the lower setpoint.
+**Stratification, not the average, sets the setpoint.** The 3D interior model finds a 2.47 K
+spread from the evaporator to the floor. Against an assumed chilling-injury floor of 10 °C, a
+13 °C setpoint leaves the coldest crate 0.85 K clear; at 11 °C, **10 of 36 crates would be damaged
+while the thermostat still reads acceptable.** A lumped model sees only the average and would
+permit the lower setpoint.
+
+**That 10 °C floor is the weakest input in the whole model, and it is open work.** It is applied
+uniformly across the solanaceous programme, but the published requirements do not agree with each
+other: garden egg is held at 14 to 16 °C for quality, bell pepper nearer 7.5 °C, mature green
+tomato 12.5 to 15 °C and ripe tomato 7 to 10 °C. The programme groups those crops because they are
+botanically related, which is the wrong basis for grouping them. A single floor also ignores
+maturity stage, which for tomato moves the requirement by several kelvin on its own. The setpoint,
+the array sizing and the SKU partition all inherit this assumption, so it is being checked with
+postharvest specialists before any of those numbers are treated as settled.
 
 **One design cannot travel.** Across 33 regions in 20 countries the required array spans 120 W to
 440 W — a 3.7× range. An exact dynamic program partitions that into three configurations covering
