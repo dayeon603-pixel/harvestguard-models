@@ -62,6 +62,8 @@ been validated against repayment outcomes, because no loans have been written ag
 
 ## Running it
 
+All paths are relative to the repo root, so `cd` into the clone first.
+
 ```bash
 pip install -r requirements.txt
 
@@ -70,8 +72,8 @@ python3 sim/ho_dynamic_sim.py            # 8,784-hour dynamic run
 python3 sim/pod_thermal_3d.py            # 3D interior model
 python3 sim/africa_sizing_engine.py      # 33 regions, SKU partition
 
-cd services/ledger && python3 -m pytest -q        # 28 tests
-PYTHONPATH=src python3 demo_season.py             # six months end to end
+(cd services/ledger && python3 -m pytest -q)                    # 28 tests
+(cd services/ledger && PYTHONPATH=src python3 demo_season.py)   # six months end to end
 ```
 
 The demo runs a season of traffic through the live API, then tampers with a historical record to
