@@ -61,11 +61,13 @@ STRESS: Final[tuple[tuple[str, float], ...]] = (
     ("COND_APPROACH_K", 15.0),
 )
 
-# Cost model, USD at 10k-unit volume, calibrated to the v1.2 bill of materials rather than
-# invented: hardware_spec.md gives $52 for a 330 W array ($0.158/W) and $230 for a 4.8 kWh
-# pack ($47.9/kWh) at volume, against a $586 total, leaving $304 for everything else. An
-# uncalibrated cost model produced an HG-C price of $839 against the BOM's $611 and was the
-# source of a 37% spread in the packet's headline capex.
+# Cost model, USD at 10k-unit volume. The three constants below are calibrated against a
+# costed v1.2 hardware specification rather than assumed: at volume a 330 W array comes to
+# $52 ($0.158/W) and a 4.8 kWh LiFePO4 pack to $230 ($47.9/kWh), against a $586 pod total,
+# which leaves $304 for structure, insulation, refrigeration, controls and assembly. That
+# calibration matters: an assumed cost model put HG-C at $839 against a costed $611, a 37%
+# spread, and since the SKU partition below minimises cost the partition inherits any error
+# here. The underlying component costing is not part of this repository.
 COST_BASE_USD: Final[float] = 304.0        # pod less array and battery
 COST_PV_USD_PER_W: Final[float] = 0.158
 COST_BATTERY_USD_PER_KWH: Final[float] = 47.9
