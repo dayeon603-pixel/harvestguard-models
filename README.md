@@ -1,4 +1,4 @@
-# HarvestGuard — models and trust rail
+# HarvestGuard: models and trust rail
 
 Open engineering models for solar-powered cold storage serving smallholder horticulture, and the
 payment-and-record layer that runs on top of them. The sizing engine is site-parametric: it solves
@@ -22,7 +22,7 @@ Rendered from <code>cad/harvestguard_pod.stl</code>; regenerate with <code>make_
 
 ---
 
-## `sim/` — the engineering models
+## `sim/`: the engineering models
 
 **Continental and national sizing**
 
@@ -49,7 +49,7 @@ Rendered from <code>cad/harvestguard_pod.stl</code>; regenerate with <code>make_
 ### Four findings worth reading
 
 **Africa: a pod sized for one site fails at another.** Moved unchanged from an East African
-highland baseline to Ho, Volta Region, the design runs an energy deficit in all twelve months —
+highland baseline to Ho, Volta Region, the design runs an energy deficit in all twelve months,
 worst case −442 Wh/day. Ho has 21% less solar resource against a 9.1 K hotter mean, so supply
 falls and demand rises together. Eight assumptions swung independently; **0 of 8 flip it.**
 
@@ -77,10 +77,10 @@ exceeds the largest existing configuration at all six sites, which is a gap this
 rather than hides. Reproduce with `python3 sim/vietnam_sizing.py`.
 
 **One design cannot travel.** Across 33 regions in 20 countries the required array spans 120 W to
-440 W — a 3.7× range. An exact dynamic program partitions that into three configurations covering
+440 W, a 3.7-fold range. An exact dynamic program partitions that into three configurations covering
 every region.
 
-## `services/ledger/` — the trust rail
+## `services/ledger/`: the trust rail
 
 Signed pod events, a tamper-evident ledger, mobile-money settlement, and the farmer credit record
 built from them. **28 passing tests.**
