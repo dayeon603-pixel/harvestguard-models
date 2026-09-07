@@ -6,6 +6,13 @@ sub-Saharan Africa, and the payment-and-record layer that runs on top of them.
 Everything here is reproducible offline: climatology is cached, so the same input gives the
 same number on any machine.
 
+<p align="center">
+  <img src="cad/harvestguard_turntable.gif" width="380" alt="HarvestGuard pod, 360-degree turntable">
+</p>
+<p align="center"><sub>1.5 m³ · 40 crate slots · R290 (GWP 3) · off-grid · payment-gated door<br>
+White polyurethane panel, monocrystalline module, galvanised steel frame. Rendered from
+<code>cad/harvestguard_pod.stl</code>.</sub></p>
+
 > **Status.** These are design and validation models. **No physical pod has been built.**
 > Every figure below is what the physics says should happen; none of it is a field measurement.
 > Each write-up ends with an explicit boundaries section stating what its model cannot support.
@@ -21,7 +28,8 @@ same number on any machine.
 | `ho_dynamic_sim.py` | 8,784-hour dynamic run on real hourly weather, integrating box temperature and battery state of charge as coupled states |
 | `pod_thermal_3d.py` | 8,925-cell finite-volume model of the pod interior, backward Euler on a prefactorised sparse operator |
 | `pod_loading_policy.py` | How much field-hot produce the pod can absorb per cycle |
-| `africa_sizing_engine.py` | Sizes array and battery for any site, then partitions 33 regions into a minimal SKU set by exact dynamic program |
+| `africa_sizing_engine.py` | Sizes array and battery for any site, then partitions 33 African regions into a minimal SKU set by exact dynamic program |
+| `vietnam_sizing.py` | Runs the same engine over six Vietnamese horticulture regions, on both the ambient and cool hold programmes |
 | `ghana_circularity.py` | Material loop and emissions, with an internal consistency check |
 | `fetch_africa_sites.py` | Fetches and caches NASA POWER climatology |
 | `africa_atlas.py`, `pod_thermal_figure.py` | Figures |
@@ -49,6 +57,14 @@ botanically related, which is the wrong basis for grouping them. A single floor 
 maturity stage, which for tomato moves the requirement by several kelvin on its own. The setpoint,
 the array sizing and the SKU partition all inherit this assumption, so it is being checked with
 postharvest specialists before any of those numbers are treated as settled.
+
+**Vietnam is uniform where Africa is not, and that is the whole entry case.** Running the same
+engine over six Vietnamese regions from Đà Lạt to Cần Thơ, the ambient hold needs 290 W to 400 W,
+a 1.4-fold range against 3.7-fold across Africa. Every Vietnamese site clears a configuration the
+African partition already produced, so entering the market needs no new hardware. **The cool hold
+does not.** The 6 °C programme Đà Lạt's temperate vegetables require needs 450 W to 580 W and
+exceeds the largest existing configuration at all six sites, which is a gap this repository states
+rather than hides. Reproduce with `python3 sim/vietnam_sizing.py`.
 
 **One design cannot travel.** Across 33 regions in 20 countries the required array spans 120 W to
 440 W — a 3.7× range. An exact dynamic program partitions that into three configurations covering
@@ -92,7 +108,8 @@ PYTHONPATH=src python3 demo_season.py
 | `ghana_energy_model.py` | Steady-state monthly balance, and the minimum array that closes every month |
 | `ho_dynamic_sim.py` | 8,784-hour run on real Ho weather: in-band %, brownout hours, worst week |
 | `pod_thermal_3d.py` | Interior field, stratification spread, crates below the assumed floor |
-| `africa_sizing_engine.py` | 33 regions sized, then partitioned into three SKUs |
+| `africa_sizing_engine.py` | 33 African regions sized, then partitioned into three SKUs |
+| `vietnam_sizing.py` | Six Vietnamese regions, ambient and cool hold, against the existing SKUs |
 | `pytest -q` | 28 tests over the ledger |
 | `demo_season.py` | Six months end to end, ending in the tamper test |
 
@@ -105,8 +122,14 @@ show the chain detecting it and the service refusing to issue credit against unv
 
 ## Data
 
-NASA POWER (NASA Langley Research Center) — monthly climatology for 33 sites and full-year 2024
-hourly data for Ho, cached under `sim/data/`. Country geometry from Natural Earth.
+NASA POWER (NASA Langley Research Center). Monthly climatology for 33 African sites under
+`sim/data/africa/` and six Vietnamese sites under `sim/data/vietnam/`, plus full-year 2024 hourly
+data for Ho under `sim/data/hourly/`. All cached, so every figure reproduces offline and a given
+input always returns the same number. Country geometry from Natural Earth.
+
+The Vietnamese sites are Đà Lạt (Lâm Đồng), Buôn Ma Thuột (Đắk Lắk), Mộc Châu (Sơn La),
+Cần Thơ, Mỹ Tho (Tiền Giang) and Phan Thiết (Bình Thuận), chosen for smallholder horticulture
+density across the country's agro-ecological range rather than by population.
 
 ## Licence
 
